@@ -1,1 +1,1 @@
-# OAuth2
+# Django for OAuth2 client library

@@ -32,7 +32,7 @@ class GoogleOAuth2():
     try:
         profile_url = settings.GOOGLE_OAUTH2_PROFILE
     except:
-        profile_url = 'https://www.googleapis.com/oauth2/v3/tokeninfo'
+        profile_url = 'https://www.googleapis.com/oauth2/v1/userinfo'
     try:
         revoke_url = settings.GOOGLE_OAUTH2_REVOKE
     except:

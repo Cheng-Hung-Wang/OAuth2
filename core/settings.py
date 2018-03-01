@@ -135,5 +135,5 @@ GOOGLE_OATUH2_GRANT_TYPE = 'authorization_code'
 # Define google api url, not require, if default fail , your can customer defined
 #GOOGLE_OAUTH2_CODE  = 'https://accounts.google.com/o/oauth2/v2/auth'
 #GOOGLE_OATUH2_TOKEN = 'https://www.googleapis.com//oauth2/v4/token'
-#GOOGLE_OAUTH2_PROFILE = 'https://www.googleapis.com/oauth2/v3/tokeninfo'
+#GOOGLE_OAUTH2_PROFILE = 'https://www.googleapis.com/oauth2/v1/userinfo'
 #GOOGLE_OAUTH2_REVOKE = 'https://accounts.google.com/o/oauth2/revoke',

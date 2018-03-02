@@ -8,7 +8,6 @@ HOST  = settings.CALLBACK_HOST
 PATH  = settings.CALLBACK_PATH
 
 def callback(request):
-    print(request.GET)
     if request.GET.get('state').find('google')>-1:
         return GoogleOAuth2().credential(request)
     else:

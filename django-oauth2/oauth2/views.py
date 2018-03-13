@@ -4,7 +4,6 @@ from django.conf import settings
 from django.shortcuts import redirect
 # Create your views here.
 
-HOST  = settings.CALLBACK_HOST
 PATH  = settings.CALLBACK_PATH
 
 def callback(request):
@@ -39,9 +38,10 @@ class GoogleOAuth2():
         revoke_url = 'https://accounts.google.com/o/oauth2/revoke'
 
     def authorize(self, request):
+        host = 'http://'+request.META['HTTP_HOST']
         url = "%s?response_type=%s&client_id=%s&scope=%s&state=google"\
             "&access_type=offline&redirect_uri=%s/%s"%\
-            (self.code_url, self.response_type, self.client_id, self.scope, HOST, PATH)
+            (self.code_url, self.response_type, self.client_id, self.scope, host, PATH)
         return redirect(url)
 
     def credential(self, request):
@@ -51,9 +51,10 @@ class GoogleOAuth2():
             return self.token2profile(request, request.GET.get("token"))
 
     def code2token(self, request, code):
+        host = 'http://'+request.META['HTTP_HOST']
         data = {'code':code, 'client_id':self.client_id, \
                 'client_secret':self.client_secret, \
-                'grant_type': self.grant_type, 'redirect_uri': "%s/%s"%(HOST, PATH)}
+                'grant_type': self.grant_type, 'redirect_uri': "%s/%s"%(host, PATH)}
 
         res = requests.post(self.token_url, data=data)
         data = json.loads(res.content.decode())

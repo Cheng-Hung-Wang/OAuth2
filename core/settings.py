@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # set call back url
-CALLBACK_HOST = "your host"
+#CALLBACK_HOST = "your host"
 CALLBACK_PATH = "your callback url"
 
 GOOGLE_OAUTH2_CLIENT_ID = 'your client id'
